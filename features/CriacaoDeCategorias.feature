@@ -11,7 +11,7 @@ Feature: Criação de categorias de itens
         And vejo o botão "Criar categoria"
 
     Scenario: Criar categoria de itens
-        Given eu sou administrador do restaurante "James Pizzas"
+        Given eu sou um usuário do sistema
         And estou na página "Categorias de itens"
         And não vejo a categoria "Pizzas"
         When clico em "Criar categoria"
@@ -24,7 +24,7 @@ Feature: Criação de categorias de itens
         And vejo os botões "Remover categoria" 
 
     Scenario: Criar categoria de itens com nome já existente
-        Given eu sou administrador do restaurante "James Pizzas"
+        Given eu sou um usuário do sistema
         And a categoria "Pizzas" já existe
         And estou na página "Categorias de itens"
         When clico em "Criar categoria"
@@ -36,7 +36,7 @@ Feature: Criação de categorias de itens
         And vejo a mensagem "Nome já está em uso" ao lado do botão "Criar"
 
     Scenario: Criar categoria de itens com nome vazio
-        Given eu sou administrador do restaurante "James Pizzas"
+        Given eu sou um usuário do sistema
         And estou na página "Categorias de itens"
         When clico em "Criar categoria"
         Then vejo a janela "Criar categoria"
@@ -46,7 +46,7 @@ Feature: Criação de categorias de itens
         And vejo a mensagem "Nome não pode ficar em branco" ao lado do botão "Criar"
     
     Scenario: Remover categoria de itens
-        Given eu sou administrador do restaurante "James Pizzas"
+        Given eu sou um usuário do sistema
         And estou na página "Categorias de itens"
         And vejo as categorias "Pizzas", "Bebidas" e "Sobremesas"
         When clico em "Remover categoria" da categoria "Pizzas"
