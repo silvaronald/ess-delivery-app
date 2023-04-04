@@ -3,16 +3,22 @@ import PrimaryButton from '../../components/atoms/primary-button/PrimaryButton.j
 import Form from 'react-bootstrap/Form';
 import CategoryItem from '../../components/molecules/category-item/CategoryItem.js';
 import Category from '../../components/organisms/category/Category.js';
+import * as Icon from 'react-bootstrap-icons';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+import './RestaurantMenu.css'
 
 function RestaurantMenu() {
+  const url = window.location.href
   return (
-    <div>
+    <div className='restaurant-menu-root'>
       <div className='header'>
         <div className='title-description'>
           <h1>Cardápio</h1>
           <p>Gerencie por essa página todos os itens e categorias cadastrados no seu restaurante.</p>
         </div>
-        <div>COMPARTILHAR</div>
+        <CopyToClipboard className='copy-button' text={url}>
+          <button><Icon.ShareFill color='red' className='share-link'/></button>
+        </CopyToClipboard>
       </div>
       <div className='add-category-area'>
         <Form>
