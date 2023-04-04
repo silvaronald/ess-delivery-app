@@ -4,7 +4,7 @@ import Layout from "./pages/Layout.js";
 import RestaurantMenu from "./pages/restaurant-menu/RestaurantMenu.js";
 // import RestaurantHome from "./pages/restaurant-menu/RestaurantMenu.js";
 
-export default function App() {
+function App() {
   return (
     <BrowserRouter>
       <Routes>
@@ -18,4 +18,4 @@ export default function App() {
   );
 }
 
-ReactDOM.render(<App />, document.getElementById("root"));
+export default App;
