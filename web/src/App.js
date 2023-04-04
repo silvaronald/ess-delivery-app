@@ -1,14 +1,17 @@
 import ReactDOM from "react-dom";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "./pages/Layout.js";
-import Login from "./pages/client-login/ClientLogin.js";
+import RestaurantMenu from "./pages/restaurant-menu/RestaurantMenu.js";
+// import RestaurantHome from "./pages/restaurant-menu/RestaurantMenu.js";
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<Login />} />
+          {/* <Route index element={<Login />} />
+          <Route path="./pages/restaurant-home/RestaurantHome.js" element={<RestaurantHome />} /> */}
+          <Route path="/restaurant-menu" element={<RestaurantMenu />} />
         </Route>
       </Routes>
     </BrowserRouter>

@@ -1,9 +1,8 @@
 import React from 'react';
 
-function Home() {
-    return (
-        <h1>this is the homepage</h1>
-    );
+function RestaurantHome() {
+    <div>
+    </div>
 }
 
-export default Home;
+export default RestaurantHome;
