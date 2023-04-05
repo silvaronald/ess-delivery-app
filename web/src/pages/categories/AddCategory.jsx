@@ -51,6 +51,7 @@ export function AddCategory() {
                 body: JSON.stringify(category)
             });
 
+            setWarningMessage("Category added successfully!")
             setShowForm(false);
             setNewCategory("");
         }
