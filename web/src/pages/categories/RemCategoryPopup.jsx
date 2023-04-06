@@ -1,7 +1,7 @@
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 
-export const RemCategoryPopup = (props) => {
+export default function RemCategoryPopup(props) {
     async function RemCategory () {
         await fetch(`http://localhost:3001/categories/${props.category}`, {
             method: "DELETE"

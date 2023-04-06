@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./pages/home/Home";
 import MyAccountPage from "./pages/myaccount/Myaccount";
 import MyOrders from "./pages/myorders/Myorders";
-import {CategoriesHome} from "./pages/categories/CategoriesHome"
+import CategoriesHome from "./pages/categories/CategoriesHome"
 
 const UrlRoutes = () => {
   return (

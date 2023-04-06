@@ -1,7 +1,7 @@
 import React from "react";
 import { isInputNull } from "../../shared/functions/isInputNull";
 
-export function AddCategory() {
+export default function AddCategory() {
     const [showForm, setShowForm] = React.useState(false);
     const [newCategory, setNewCategory] = React.useState("");
     const [warningMessage, setWarningMessage] = React.useState(null);
@@ -51,7 +51,6 @@ export function AddCategory() {
                 body: JSON.stringify(category)
             });
 
-            setWarningMessage("Category added successfully!")
             setShowForm(false);
             setNewCategory("");
         }
@@ -60,7 +59,7 @@ export function AddCategory() {
     return (
         <div>
             <h1>Categories</h1>
-            <button onClick={handleAddCategoryClick}>Add category</button>
+            <button onClick={handleAddCategoryClick} data-testid = "add-category-button">Add category</button>
             {showForm && (
                 <form onSubmit={handleConfirmClick}>
                     <label>
@@ -69,12 +68,13 @@ export function AddCategory() {
                             type="text"
                             value={newCategory}
                             onChange={handleNewCategoryChange}
+                            data-testid = "add-category-input"
                         />
                     </label>
-                    <button type="button" onClick={handleCancelClick}>
+                    <button type="button" onClick={handleCancelClick} data-testid = "cancel-button">
                         Cancel
                     </button>
-                    <button type="submit">
+                    <button type="submit" data-testid = "create-category-button">
                         Confirm
                     </button>
                 </form>

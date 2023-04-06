@@ -21,8 +21,7 @@ Feature: Criação de categorias de itens
         Then surgirá um campo de texto "Nome da categoria"
         When eu preencho o campo "Nome da categoria" com "Bolos"
         And clico no botão "Adicionar"
-        Then eu vejo uma mensagem dizendo "Nova categoria adicionada ao restaurante!"
-        And o sistema armazenará a categoria "Bolos" para o restaurante "LaFamme"
+        Then o sistema armazenará a categoria "Bolos" para o restaurante "LaFamme"
     
     Scenario: Tentar criar uma categoria com um nome já existente
         Given que eu estou logado como "Admin" com o login "pepe"

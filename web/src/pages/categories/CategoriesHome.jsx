@@ -1,8 +1,8 @@
 import React from "react";
-import { AddCategory } from "./AddCategory";
-import { RemCategoryPopup } from "./RemCategoryPopup";
+import AddCategory from "./AddCategory";
+import RemCategoryPopup from "./RemCategoryPopup";
 
-export const CategoriesHome = () => {
+export default function CategoriesHome() {
     const [categories, setCategories] = React.useState([]);
     const [addItemToggle, setAddItemToggle] = React.useState(false);
     const [remItemToggle, setRemItemToggle] = React.useState([false, null]);
