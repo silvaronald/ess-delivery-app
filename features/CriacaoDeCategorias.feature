@@ -59,3 +59,27 @@ Feature: Criação de categorias de itens
         Then surgirá um pop-up de confirmação perguntando "Você realmente deseja excluir a categoria? Todos os itens que pertencem a ela também serão excluídos!"
         When eu clico no botão "Confirmar"
         And o sistema excluirá a categoria "Pratão" do restaurante "LaFamme"
+
+    Scenario: Cancelar a Criação de uma categoria
+        Given que eu estou logado como "Admin" com o login "pepe"
+        And meu restaurante se chama "LaFamme"
+        And que eu estou na página "Início"
+        When eu clico na aba de navegação "Categorias"
+        Then eu devo ser redirecionado para a página "Categorias" do restaurante "LaFamme"
+        When eu clico no botão "Nova categoria"
+        Then surgirá um campo de texto "Nome da categoria"
+        When eu preencho o campo "Nome da categoria" com "Pratão"
+        And clico no botão "Cancelar"
+        Then o sistema não armazenará a categoria "Pratão" para o restaurante "LaFamme"
+    
+    Scenario: Cancelar a Exclusão de uma categoria
+        Given que eu estou logado como "Admin" com o login "pepe"
+        And meu restaurante se chama "LaFamme"
+        And o restaurante "LaFamme" possui a categoria "Pratão"
+        And que eu estou na página "Início"
+        When eu clico na aba de navegação "Categorias"
+        Then eu devo ser redirecionado para a página "Categorias" do restaurante "LaFamme"
+        When eu clico no botão "Remover" da categoria "Pratão"
+        Then surgirá um pop-up de confirmação perguntando "Você realmente deseja excluir a categoria? Todos os itens que pertencem a ela também serão excluídos!"
+        When eu clico no botão "Cancelar"
+        And o sistema não excluirá a categoria "Pratão" do restaurante "LaFamme"

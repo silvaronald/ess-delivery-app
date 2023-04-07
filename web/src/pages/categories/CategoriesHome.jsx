@@ -16,13 +16,13 @@ export default function CategoriesHome() {
 
     return (
         <div className="App">
-            <AddCategory show={addItemToggle} onHide={() => setAddItemToggle(false)}/>
+            <AddCategory show={addItemToggle} onHide={() => setAddItemToggle(false)} data-testid = 'setAdd'/>
             <RemCategoryPopup show={remItemToggle[0]} category={remItemToggle[1]} onHide={() => setRemItemToggle(false)}/>
             {
             categories.map((category) => (
             <div key={category.id}>
                 <li>{category.name}</li>
-                <button onClick={() => setRemItemToggle([true, category.id])}>Remover</button>
+                <button onClick={() => setRemItemToggle([true, category.id])} data-testid = 'remove-category-button'>Remover</button>
             </div>
             ))
             }

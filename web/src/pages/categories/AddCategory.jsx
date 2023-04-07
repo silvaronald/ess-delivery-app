@@ -33,7 +33,7 @@ export default function AddCategory() {
         event.preventDefault();
         
         if (isInputNull(newCategory)) {
-            setWarningMessage("All inputs must be filled!");
+            setWarningMessage("Please enter a category name!");
         } else if (
             currentCategories.filter(
                 category => category.name === newCategory
