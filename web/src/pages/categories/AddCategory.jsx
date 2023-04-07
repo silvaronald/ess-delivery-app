@@ -1,5 +1,7 @@
 import React from "react";
 import { isInputNull } from "../../shared/functions/isInputNull";
+import { isDuplicateCategory } from "../../shared/functions/isDuplicateCategory";
+
 
 export default function AddCategory() {
     const [showForm, setShowForm] = React.useState(false);
@@ -35,9 +37,7 @@ export default function AddCategory() {
         if (isInputNull(newCategory)) {
             setWarningMessage("Please enter a category name!");
         } else if (
-            currentCategories.filter(
-                category => category.name === newCategory
-            ).length > 0
+            isDuplicateCategory(newCategory, currentCategories)
         ) {
             setWarningMessage("There is already a category with that name!");
         } else {

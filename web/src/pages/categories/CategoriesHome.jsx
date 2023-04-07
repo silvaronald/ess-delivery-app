@@ -22,7 +22,7 @@ export default function CategoriesHome() {
             categories.map((category) => (
             <div key={category.id}>
                 <li>{category.name}</li>
-                <button onClick={() => setRemItemToggle([true, category.id])} data-testid = 'remove-category-button'>Remover</button>
+                <button onClick={() => setRemItemToggle([true, category.id])} data-testid = {`remove-category-button-${category.name}`}>Remover</button>
             </div>
             ))
             }
