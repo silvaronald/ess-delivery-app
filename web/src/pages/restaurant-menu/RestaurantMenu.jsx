@@ -55,8 +55,8 @@ export const RestaurantMenu = () => {
                 <SecondaryButton
                   variant='success'
                   onClick={() => setAddItemToggle([true, category.name])}
-                  data-testid='addItemBtn'
-                  buttonContent="Adicionar categoria">
+                  testid='addItemBtn'
+                  buttonContent="Adicionar item">
                 </SecondaryButton>
                 <SecondaryButton
                   variant='primary' 

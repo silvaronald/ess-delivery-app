@@ -4,7 +4,7 @@ import './PrimaryButton.css'
 function PrimaryButton(props) {
   return (
     <div>
-      <button onClick={props.onClick} className='primary-button'>{props.buttonContent}</button>
+      <button onClick={props.onClick} className='primary-button' data-testid={props.testid}>{props.buttonContent}</button>
     </div>
   )
 }

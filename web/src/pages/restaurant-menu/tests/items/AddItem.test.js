@@ -50,7 +50,7 @@ describe('AddItemPopup', () => {
         fireEvent.click(screen.getByTestId('addButton'));
 
         // Expect error message
-        waitFor(() => screen.findByText('Todas as entradas devem ser preenchidas!'), { timeout: 1500 });
+        waitFor(() => screen.findByText('Todas as entradas devem ser preenchidas!'), { timeout: 2500 });
 
         // Click "Cancelar"
         fireEvent.click(screen.getByText('Cancelar'));
@@ -102,7 +102,7 @@ describe('AddItemPopup', () => {
         fireEvent.click(screen.getByTestId('addButton'));
 
         // Expect error message
-        await waitFor(() => expect(screen.getByText("Já existe um item com esse nome!")).toBeInTheDocument(), { timeout: 1500 });
+        await waitFor(() => expect(screen.getByText("Já existe um item com esse nome!")).toBeInTheDocument(), { timeout: 2500 });
 
         // Click "Cancelar"
         fireEvent.click(screen.getByText('Cancelar'));

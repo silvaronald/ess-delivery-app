@@ -5,7 +5,6 @@ import { createItem } from '../CreateItem';
 describe('EdiItemPopup', () => {
     beforeEach(async () => {
         await deleteItemsAndCategories();
-
         await createItem();
     });
 
@@ -26,7 +25,7 @@ describe('EdiItemPopup', () => {
 
     it('should close the modal when Cancelar button is clicked', async () => {
         // Fire Editar popup
-        fireEvent.click(screen.getByText('Editar'));
+        fireEvent.click(screen.getByTestId('editItemButton'));
 
         // Wait for the popup to appear
         await waitFor(() => screen.findByText('Cancelar'));
@@ -43,7 +42,7 @@ describe('EdiItemPopup', () => {
 
     it('should show a warning message if any field is left blank', async () => {
         // Fire Editar popup
-        fireEvent.click(screen.getByText('Editar'));
+        fireEvent.click(screen.getByTestId('editItemButton'));
 
         // Wait for the popup to appear
         await waitFor(() => screen.findByText('Cancelar'));
@@ -69,7 +68,7 @@ describe('EdiItemPopup', () => {
 
     it('should show a warning message if the price format is invalid', async () => {
         // Fire Editar popup
-        fireEvent.click(screen.getByText('Editar'));
+        fireEvent.click(screen.getByTestId('editItemButton'));
 
         // Wait for the popup to appear
         await waitFor(() => screen.findByText('Cancelar'));
@@ -106,7 +105,7 @@ describe('EdiItemPopup', () => {
         await waitFor(() => expect(screen.queryByTestId('addButton')).toBeNull());
 
         // Fire Editar popup
-        fireEvent.click(screen.getAllByText('Editar')[0]);
+        fireEvent.click(screen.getAllByTestId('editItemButton')[0]);
 
         // Wait for the popup to appear
         await waitFor(() => screen.findByText('Cancelar'));
@@ -133,7 +132,7 @@ describe('EdiItemPopup', () => {
 
     it('should edit the item and close the pop-up when all fields are filled correctly', async () => {
         // Fire Editar popup
-        fireEvent.click(screen.getByText('Editar'));
+        fireEvent.click(screen.getByTestId('editItemButton'));
 
         // Wait for the popup to appear
         await waitFor(() => screen.findByText('Cancelar'));
@@ -158,7 +157,7 @@ describe('EdiItemPopup', () => {
 
     it('should close the pop-up when all fields are equal to the original item', async () => {
         // Fire Editar popup
-        fireEvent.click(screen.getByText('Editar'));
+        fireEvent.click(screen.getByTestId('editItemButton'));
 
         // Wait for the popup to appear
         await waitFor(() => screen.findByText('Cancelar'));

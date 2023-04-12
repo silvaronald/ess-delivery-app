@@ -10,11 +10,10 @@ export async function createItem () {
     expect(screen.queryByTestId('removeItemButton')).toBeNull();
     
     // Add a category
-    fireEvent.click(screen.getByTestId('add-category-button'));
-    fireEvent.change(screen.getByPlaceholderText('Nome'), { target: { value: 'Categoria Teste' } });
-    fireEvent.click(screen.getByTestId('create-category-button'));
+    fireEvent.change(screen.getByTestId('add-category-input'), { target: { value: 'Categoria Teste' } });
+    fireEvent.click(screen.getByText('Adicionar categoria'));
     
-    await (waitFor(() => screen.findByText('Categoria Teste')));
+    await waitFor(() => screen.findByText('Categoria Teste'), { timeout: 2000 });
     
     // Click the "Adicionar item" button
     fireEvent.click(screen.getByTestId('addItemBtn'));

@@ -4,7 +4,7 @@ import './SecondaryButton.css'
 function SecondaryButton(props) {
   return (
     <div>
-      <button onClick={props.onClick} className='secondary-button'>{props.buttonContent}</button>
+      <button onClick={props.onClick} className='secondary-button' data-testid={props.testid}>{props.buttonContent}</button>
     </div>
   )
 }

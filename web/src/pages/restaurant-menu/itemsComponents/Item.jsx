@@ -16,13 +16,13 @@ export const Item = (props) => {
                 <Card.Text>R$ {props.item.price}</Card.Text>
                 <SecondaryButton
                   variant='primary' 
-                  data-testid="editItemButton"
+                  testid="editItemButton"
                   onClick={props.onClickEdit}
                   buttonContent={<Icon.PencilFill />}>
                 </SecondaryButton>
                 <SecondaryButton
                   variant='primary' 
-                  data-testid="removeItemButton"
+                  testid="removeItemButton"
                   onClick={props.onClickRemove}
                   buttonContent={<Icon.TrashFill />}>
                 </SecondaryButton>
