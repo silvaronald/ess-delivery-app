@@ -61,7 +61,7 @@ export const RestaurantMenu = () => {
                 <SecondaryButton
                   variant='primary' 
                   onClick={() => setRemCatToggle([true, category.id])} 
-                  data-testid={`remove-category-button-${category.name}`}
+                  testid={`remove-category-button-${category.name}`}
                   buttonContent={<Icon.TrashFill />}>
                 </SecondaryButton>
               </div>
