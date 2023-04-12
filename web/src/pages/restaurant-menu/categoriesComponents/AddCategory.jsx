@@ -1,14 +1,19 @@
 import React from "react";
 import { isInputNull } from "../../../shared/functions/isInputNull";
 import { isDuplicateCategory } from "../../../shared/functions/isDuplicateCategory";
+import * as Icon from 'react-bootstrap-icons';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+import PrimaryButton from "../../../components/atoms/primary-button/PrimaryButton";
+import "./AddCategory.scss"
+import CopyLink from "../../../components/atoms/copy-link/CopyLink.js";
 import Button from 'react-bootstrap/Button';
 
-
 export default function AddCategory(props) {
-  const [showForm, setShowForm] = React.useState(false);
+  const [showForm, setShowForm] = React.useState(true);
   const [newCategory, setNewCategory] = React.useState("");
   const [warningMessage, setWarningMessage] = React.useState(null);
   const [currentCategories, setCurrentCategories] = React.useState([]);
+  const url = window.location.href
 
   React.useEffect(() => {
     fetch("http://localhost:3001/categories")
@@ -28,7 +33,7 @@ export default function AddCategory(props) {
   }
 
   function handleCancelClick() {
-    setShowForm(false);
+    setShowForm(true);
     setNewCategory("");
     setWarningMessage(null);
   }
@@ -53,7 +58,7 @@ export default function AddCategory(props) {
         body: JSON.stringify(category)
       });
 
-      setShowForm(false);
+      setShowForm(true);
       setNewCategory("");
       props.onHide()
     }

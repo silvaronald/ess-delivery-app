@@ -1,6 +1,15 @@
 {
   "items": [],
-  "categories": [],
+  "categories": [
+    {
+      "id": 1681262208196,
+      "name": "1qwqe"
+    },
+    {
+      "id": 1681262218598,
+      "name": "1231323123"
+    }
+  ],
   "clients": [
     {
       "name": "bia",
